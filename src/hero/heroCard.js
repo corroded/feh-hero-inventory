@@ -1,13 +1,16 @@
 import React from 'react'
+import HeroPortrait from './heroPortrait'
 
-class HeroCard extends React.Component {
-  render() {
-    return(
-      <section className="hero-card">
-        {this.props.children}
-      </section>
-    )
-  }
+const HeroCard = (props) => {
+  const { children } = props
+  console.log(children)
+
+  return(
+    <section className="hero-card">
+      <HeroPortrait />
+      {children.name}
+    </section>
+  )
 }
 
 export default HeroCard
