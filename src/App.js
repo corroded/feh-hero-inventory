@@ -18,7 +18,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        {/* <HeroList heroes={heroes} /> */}
+        <HeroList heroes={heroes} />
       </div>
     )
   }
