@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
+
 import './App.css';
-import { HeroList } from './hero'
+import 'react-select/dist/react-select.css'
+import 'react-virtualized/styles.css'
+import 'react-virtualized-select/styles.css'
+
+import { HeroList, HeroSelector } from './hero'
 import HeroUtils from './utils/hero'
 
 class App extends Component {
   render() {
-    const kek = HeroUtils.heroesForSkill('Fury 3')
-
-    console.log(kek)
-
     return (
-      <div className="App">
-        {/* <HeroList heroes={heroes} /> */}
+      <div className="main-app">
+        <aside className="main-sidebar">
+          <HeroSelector />
+        </aside>
       </div>
     )
   }

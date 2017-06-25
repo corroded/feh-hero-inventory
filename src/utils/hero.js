@@ -1,14 +1,27 @@
 import React from 'react'
-import * as stats  from 'fire-emblem-heroes-stats'
+import Heroes from '../data/heroes'
 
 export default class {
-  static heroesForSkill(skillName) {
-    const heroes = stats.getAllHeroes()
+  static nameList = () => {
+    return Heroes.map((hero) => {
+      return { name: hero.name }
+    })
+  }
 
-    return heroes.filter((hero) => {
+  static heroesForSkill(skillName) {
+    const heroesWithSkill = Heroes.filter((hero) => {
       return hero.skills.filter((skill) => {
         return skill.name === skillName
       }).length > 0
+    })
+
+    return heroesWithSkill.map((hero) => {
+      return {
+        name: hero.name,
+        rarity: hero.skills.find((skill) => {
+          return (skill.name === skillName)
+        }).rarity
+      }
     })
   }
 }
