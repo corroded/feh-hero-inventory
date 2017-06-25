@@ -1,3 +1,4 @@
-export { default as HeroCard } from './heroCard'
-export { default as HeroPortrait } from './heroPortrait'
-export { default as HeroList } from './heroList'
+export { default as HeroCard } from './card'
+export { default as HeroPortrait } from './portrait'
+export { default as HeroList } from './list'
+export { default as HeroSelector } from './selector'

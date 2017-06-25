@@ -1,5 +1,5 @@
 import React from 'react'
-import HeroCard from './heroCard'
+import HeroCard from './card'
 
 const HeroList = (props) => {
   const { heroes } = props

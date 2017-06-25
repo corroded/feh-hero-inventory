@@ -1,5 +1,5 @@
 import React from 'react'
-import HeroPortrait from './heroPortrait'
+import HeroPortrait from './portrait'
 
 const HeroCard = (props) => {
   const { children } = props
