@@ -4,12 +4,16 @@ import SelectField from 'material-ui/SelectField'
 import VirtualizedSelect from 'react-virtualized-select'
 
 export default class HeroSelector extends React.Component {
-  state = {
-    selectedNames: null
+  componentWillMount = () => {
+    this.onChange = this.props.onChange
+  }
+
+  selectNames = (selectedNames) => {
+    this.onChange(selectedNames)
   }
 
   render() {
-    const { selectedNames } = this.state
+    const { selectedNames } = this.props
 
     return(
       <div className='hero-selector'>
@@ -18,7 +22,7 @@ export default class HeroSelector extends React.Component {
           clearable={true}
           labelKey='name'
           multi={true}
-          onChange={(selectedNames) => this.setState({ selectedNames })}
+          onChange={this.selectNames}
           options={HeroUtils.nameList()}
           searchable={true}
           value={selectedNames}

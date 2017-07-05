@@ -2472,9 +2472,9 @@ find-up@^2.1.0:
   dependencies:
     locate-path "^2.0.0"
 
-fire-emblem-heroes-stats@^0.7.16:
-  version "0.7.16"
-  resolved "https://registry.yarnpkg.com/fire-emblem-heroes-stats/-/fire-emblem-heroes-stats-0.7.16.tgz#50db4948777bda41fdd12388e1bca86b2d8d59a7"
+fire-emblem-heroes-stats@^0.9.2:
+  version "0.9.2"
+  resolved "https://registry.yarnpkg.com/fire-emblem-heroes-stats/-/fire-emblem-heroes-stats-0.9.2.tgz#a8fa24570c5f36cbce704a8bd898ec40beac375f"
   dependencies:
     isomorphic-fetch "^2.2.1"
     ramda "^0.23.0"
