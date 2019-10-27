@@ -15,11 +15,15 @@ import HeroUtils from './utils/hero'
 class App extends Component {
   state = {
     currentHero: null,
+    selectedHero: null,
     heroes: []
   }
 
-  onHeroSelection = (heroes) => {
-    this.setState({ heroes })
+  addHero = (hero) => {
+  }
+
+  onHeroSelection = (hero) => {
+    this.setState({ selectedHero: hero })
   }
 
   updateCurrentHero = (event) => {
@@ -27,14 +31,15 @@ class App extends Component {
   }
 
   render() {
-    const { currentHero, heroes } = this.state
+    const { currentHero, heroes, selectedHero } = this.state
 
     return (
       <div className="main-app">
         <aside className="main-sidebar">
           <HeroSelector
+            onAddHero={this.addHero}
             onChange={this.onHeroSelection}
-            selectedNames={heroes}
+            selectedHero={selectedHero}
           />
           <HeroList
             heroes={heroes}

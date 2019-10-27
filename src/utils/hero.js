@@ -20,7 +20,7 @@ export default class HeroUtils {
     }
 
     if (hero == null) {
-        return
+      return
     }
 
     let thehero = this.getHero(hero)

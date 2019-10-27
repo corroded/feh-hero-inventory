@@ -14,17 +14,24 @@ export default class HeroList extends React.Component  {
     const { heroes } = this.props
 
     return(
-      <ul className='hero-list'>
-        {heroes.map((hero, id) => {
-          return(
-            <HeroListItem
-              hero={hero}
-              key={id}
-              onClick={this.onSelect}
-            />
-          )
-        })}
-      </ul>
+      <table className='hero-list'>
+        <thead>
+          <tr>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          {heroes.map((hero, id) => {
+            return(
+              <HeroListItem
+                hero={hero}
+                key={id}
+                onClick={this.onSelect}
+              />
+            )
+          })}
+        </tbody>
+      </table>
     )
   }
 }

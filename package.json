@@ -10,6 +10,7 @@
     "material-ui": "^0.18.3",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-numeric-input": "^2.0.7",
     "react-tap-event-plugin": "^2.0.1",
     "react-virtualized-select": "^3.0.1"
   },

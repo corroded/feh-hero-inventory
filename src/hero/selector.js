@@ -6,14 +6,23 @@ import VirtualizedSelect from 'react-virtualized-select'
 export default class HeroSelector extends React.Component {
   componentWillMount = () => {
     this.onChange = this.props.onChange
+    this.onAddHero = this.props.onAddHero
   }
 
-  selectNames = (selectedNames) => {
-    this.onChange(selectedNames)
+  selectName = (selectedName) => {
+    this.onChange(selectedName)
+  }
+
+  addHeroToList = () => {
+    // I think this is where we use redux:
+    // get hero from VirtualizedSelect and pass it up to main app
+    // since main app keeps state of the hero list
+    // this.onAddHero()
   }
 
   render() {
-    const { selectedNames } = this.props
+    const { selectedHero } = this.props
+    const selectedName = selectedHero ? selectedHero.name : null
 
     return(
       <div className='hero-selector'>
@@ -21,13 +30,18 @@ export default class HeroSelector extends React.Component {
           autofocus
           clearable={true}
           labelKey='name'
-          multi={true}
-          onChange={this.selectNames}
+          onChange={this.selectName}
           options={HeroUtils.nameList()}
           searchable={true}
-          value={selectedNames}
+          value={selectedName}
           valueKey='name'
         />
+        <button
+          className='add-hero'
+          onClick={this.addHeroToList}
+        >
+          Add Hero
+        </button>
       </div>
     )
   }

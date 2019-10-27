@@ -1,4 +1,5 @@
 import React from 'react'
+import NumericInput from 'react-numeric-input'
 
 class HeroListItem extends React.Component {
   componentWillMount = () => {
@@ -9,9 +10,11 @@ class HeroListItem extends React.Component {
     const { hero } = this.props
 
     return(
-      <li className='hero'>
-        <a onClick={this.onClick}>{hero.name}</a>
-      </li>
+      <tr className='hero-details'>
+        <td className='name'>
+          <a onClick={this.onClick}>{hero.name}</a>
+        </td>
+      </tr>
     )
   }
 }
